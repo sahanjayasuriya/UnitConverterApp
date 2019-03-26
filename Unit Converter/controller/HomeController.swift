@@ -51,7 +51,10 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         let menuItem = menuItems[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuCell
         
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(red: 21/255, green: 30/255, blue: 41/255, alpha: 1)
         cell.setMenuItem(menuItem: menuItem)
+        cell.selectedBackgroundView = backgroundView
         
         return cell
     }
