@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import CoreData
 
 class WeightViewController: UITableViewController {
 
@@ -17,12 +18,17 @@ class WeightViewController: UITableViewController {
     @IBOutlet weak var poundsTextField: UITextField!
     @IBOutlet weak var stonePoundsTextField: UITextField!
     
+    
     let kilogramConstant: Double = 1000
     let ounceConstant: Double = 28.34952
     let poundConstant: Double = 453.59237
     let stonePoundConstant: Double = 14
     
     var gramValue: Double = 0
+    
+    let defaults = UserDefaults.standard
+    var weights = [Weight]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,6 +122,27 @@ class WeightViewController: UITableViewController {
     }
     
     @IBAction func saveConversion(_ sender: UIBarButtonItem) {
+        let kilogram = kilogramTextField.text
+        let gram = gramTextField.text
+        let ounce = ouncesTextField.text
+        let pounds = poundsTextField.text
+        let stonePound = stonePoundsTextField.text
+        
+        if let kilogramValue = Double(kilogram!),  let gramValue = Double(gram!),  let ounceValue = Double(ounce!),  let poundValue = Double(pounds!),  let stonePoundValue = Double(stonePound!){
+            
+            let weight = Weight(context: context)
+            weight.kilogram = kilogramValue
+            weight.gram = gramValue
+            weight.ounce = ounceValue
+            weight.pound = poundValue
+            weight.stonePound = stonePoundValue
+            
+            do {
+                try context.save()
+            } catch {
+                print("Error saving weight \(error)")
+            }
+        }
         
     }
 }

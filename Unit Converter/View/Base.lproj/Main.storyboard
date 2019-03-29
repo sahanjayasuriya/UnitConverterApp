@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EY0-zN-BvZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EY0-zN-BvZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.082352941176470587" green="0.11764705882352941" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -40,7 +40,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAd-Ag-M8n">
-                                                    <rect key="frame" x="70" y="13" width="554" height="24"/>
+                                                    <rect key="frame" x="70" y="13" width="262" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="217-zM-qca"/>
                                                     </constraints>
@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="1897" y="-564"/>
         </scene>
-        <!--Weight View Controller-->
+        <!--Unit Converter-->
         <scene sceneID="Wdb-OR-kZ6">
             <objects>
                 <tableViewController id="zfJ-ZH-2C4" customClass="WeightViewController" customModule="Unit_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,12 +339,53 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="qHC-IB-mV0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="th5-CK-AZI">
+                                        <rect key="frame" x="0.0" y="324" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="th5-CK-AZI" id="2RC-6q-rgp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wD-ON-iBt">
+                                                    <rect key="frame" x="15" y="5" width="345" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="View History">
+                                                        <color key="titleColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7wD-ON-iBt" secondAttribute="trailing" constant="15" id="6vn-1K-4QW"/>
+                                                <constraint firstItem="7wD-ON-iBt" firstAttribute="centerX" secondItem="2RC-6q-rgp" secondAttribute="centerX" id="Kp6-co-gdJ"/>
+                                                <constraint firstItem="7wD-ON-iBt" firstAttribute="top" secondItem="2RC-6q-rgp" secondAttribute="top" constant="5" id="geN-p7-zuN"/>
+                                                <constraint firstItem="7wD-ON-iBt" firstAttribute="leading" secondItem="2RC-6q-rgp" secondAttribute="leading" constant="15" id="iHh-Rb-u4O"/>
+                                                <constraint firstItem="7wD-ON-iBt" firstAttribute="centerY" secondItem="2RC-6q-rgp" secondAttribute="centerY" id="l9y-v2-74y"/>
+                                                <constraint firstAttribute="bottom" secondItem="7wD-ON-iBt" secondAttribute="bottom" constant="5" id="r1a-n0-avH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="zfJ-ZH-2C4" id="kMv-Wc-eia"/>
                             <outlet property="delegate" destination="zfJ-ZH-2C4" id="bW9-wo-Zdo"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Unit Converter" id="YWS-0E-UyE">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="5bl-6X-d5B"/>
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="icon-save" systemItem="save" id="f1H-sG-ZsL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveConversion:" destination="zfJ-ZH-2C4" id="NHI-Bb-Gub"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gramTextField" destination="zXP-34-gwC" id="h2j-Zu-CHx"/>
                         <outlet property="kilogramTextField" destination="gK2-Ps-1Gb" id="ki8-Dk-P8Q"/>
@@ -357,7 +398,7 @@
             </objects>
             <point key="canvasLocation" x="2877.5999999999999" y="-1899.400299850075"/>
         </scene>
-        <!--Temperature View Controller-->
+        <!--Unit Converter-->
         <scene sceneID="4Dr-YG-56A">
             <objects>
                 <tableViewController id="C4D-c4-WQC" customClass="TemperatureViewController" customModule="Unit_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -520,12 +561,50 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="tVT-Nb-x30">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="fZO-1c-5pE">
+                                        <rect key="frame" x="0.0" y="234" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fZO-1c-5pE" id="WVR-jY-rDN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGe-7o-W3L">
+                                                    <rect key="frame" x="15" y="5" width="345" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="View History">
+                                                        <color key="titleColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cGe-7o-W3L" firstAttribute="top" secondItem="WVR-jY-rDN" secondAttribute="top" constant="5" id="6Cs-Ng-TcJ"/>
+                                                <constraint firstItem="cGe-7o-W3L" firstAttribute="leading" secondItem="WVR-jY-rDN" secondAttribute="leading" constant="15" id="9NO-CS-2Xe"/>
+                                                <constraint firstItem="cGe-7o-W3L" firstAttribute="centerY" secondItem="WVR-jY-rDN" secondAttribute="centerY" id="AvV-sO-p95"/>
+                                                <constraint firstItem="cGe-7o-W3L" firstAttribute="centerX" secondItem="WVR-jY-rDN" secondAttribute="centerX" id="Du8-ob-bdL"/>
+                                                <constraint firstAttribute="trailing" secondItem="cGe-7o-W3L" secondAttribute="trailing" constant="15" id="VR1-Gq-W2W"/>
+                                                <constraint firstAttribute="bottom" secondItem="cGe-7o-W3L" secondAttribute="bottom" constant="5" id="fME-yh-J56"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="C4D-c4-WQC" id="lg3-oI-73G"/>
                             <outlet property="delegate" destination="C4D-c4-WQC" id="kOK-38-zKn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Unit Converter" id="Mk2-Vt-b9n">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="cWk-1q-rPD"/>
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="icon-save" systemItem="save" id="yBM-7k-Day">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="celciusTextField" destination="sXo-kp-kru" id="hEB-Of-oY9"/>
                         <outlet property="fahrenheitTextField" destination="jW2-Pp-jQO" id="4lv-Jx-9zr"/>
@@ -536,7 +615,7 @@
             </objects>
             <point key="canvasLocation" x="2878" y="-1235"/>
         </scene>
-        <!--Length View Controller-->
+        <!--Unit Converter-->
         <scene sceneID="tfi-o7-CAS">
             <objects>
                 <tableViewController id="eRF-PM-m8e" customClass="LengthViewController" customModule="Unit_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -821,12 +900,50 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="sr2-z7-Gu4">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="S5E-Fn-ntP">
+                                        <rect key="frame" x="0.0" y="370" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S5E-Fn-ntP" id="NIf-cd-QfR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vle-KQ-A3f">
+                                                    <rect key="frame" x="15" y="5" width="345" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="View History">
+                                                        <color key="titleColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="vle-KQ-A3f" secondAttribute="trailing" constant="15" id="3FN-Yy-ZwW"/>
+                                                <constraint firstItem="vle-KQ-A3f" firstAttribute="leading" secondItem="NIf-cd-QfR" secondAttribute="leading" constant="15" id="FT9-j0-myo"/>
+                                                <constraint firstAttribute="bottom" secondItem="vle-KQ-A3f" secondAttribute="bottom" constant="5" id="NCe-pH-MeQ"/>
+                                                <constraint firstItem="vle-KQ-A3f" firstAttribute="centerY" secondItem="NIf-cd-QfR" secondAttribute="centerY" id="SbB-OY-Npt"/>
+                                                <constraint firstItem="vle-KQ-A3f" firstAttribute="top" secondItem="NIf-cd-QfR" secondAttribute="top" constant="5" id="V5I-uQ-AJJ"/>
+                                                <constraint firstItem="vle-KQ-A3f" firstAttribute="centerX" secondItem="NIf-cd-QfR" secondAttribute="centerX" id="uKf-yx-x4F"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="eRF-PM-m8e" id="Rgs-0L-cZA"/>
                             <outlet property="delegate" destination="eRF-PM-m8e" id="sfw-97-d4H"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Unit Converter" id="vuG-FF-B2s">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Zzy-kB-aJu"/>
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="icon-save" systemItem="save" id="MP0-FW-GUa">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="centimetreTextField" destination="Oof-Uz-Lim" id="nuC-Qm-bXU"/>
                         <outlet property="inchTextField" destination="f95-nW-CEB" id="Sjh-yD-GJ4"/>
@@ -839,6 +956,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGc-an-jBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2877.5999999999999" y="-564.46776611694156"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vsW-4A-4Rl">
+            <objects>
+                <viewController id="II4-V7-Obb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xy6-RC-HVE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="h4N-UU-Ggf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVv-0a-sZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3878" y="-564"/>
         </scene>
         <!--Constants-->
         <scene sceneID="I09-DK-Vka">
@@ -857,7 +989,7 @@
             </objects>
             <point key="canvasLocation" x="1897" y="215"/>
         </scene>
-        <!--Speed View Controller-->
+        <!--Unit Converter-->
         <scene sceneID="AQy-p2-9Rf">
             <objects>
                 <tableViewController id="0WN-tQ-JGm" customClass="SpeedViewController" customModule="Unit_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -1062,12 +1194,48 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="7se-l5-e40">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="qt7-UU-NSb">
+                                        <rect key="frame" x="0.0" y="279" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qt7-UU-NSb" id="fOt-D7-G3i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKj-KU-yMz">
+                                                    <rect key="frame" x="15" y="5" width="345" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="View History">
+                                                        <color key="titleColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MKj-KU-yMz" firstAttribute="top" secondItem="fOt-D7-G3i" secondAttribute="top" constant="5" id="6R0-Yf-bOk"/>
+                                                <constraint firstAttribute="bottom" secondItem="MKj-KU-yMz" secondAttribute="bottom" constant="5" id="VU0-J9-wzQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="MKj-KU-yMz" secondAttribute="trailing" constant="15" id="bac-vj-zAf"/>
+                                                <constraint firstItem="MKj-KU-yMz" firstAttribute="leading" secondItem="fOt-D7-G3i" secondAttribute="leading" constant="15" id="rVI-v4-8D1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="0WN-tQ-JGm" id="tmF-6r-VX9"/>
                             <outlet property="delegate" destination="0WN-tQ-JGm" id="mHg-ge-LXb"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Unit Converter" id="37p-AE-CRo">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Y6W-kh-4YR"/>
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="icon-save" systemItem="save" id="SvE-Ou-a3R">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="kphTextField" destination="HU5-IK-wFK" id="ihM-jw-Geo"/>
                         <outlet property="mphTextField" destination="q1H-XG-fHi" id="uUB-R8-iYI"/>
@@ -1079,7 +1247,7 @@
             </objects>
             <point key="canvasLocation" x="2878" y="102"/>
         </scene>
-        <!--Volume View Controller-->
+        <!--Unit Converter-->
         <scene sceneID="fsR-uf-zmr">
             <objects>
                 <tableViewController id="jON-G2-yKF" customClass="VolumeViewController" customModule="Unit_Converter" customModuleProvider="target" sceneMemberID="viewController">
@@ -1326,12 +1494,50 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="V9u-EC-uly">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="wxx-IS-aY8">
+                                        <rect key="frame" x="0.0" y="324" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wxx-IS-aY8" id="IQc-V4-oFk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCx-K3-EE2">
+                                                    <rect key="frame" x="15" y="5" width="345" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="View History">
+                                                        <color key="titleColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zCx-K3-EE2" firstAttribute="leading" secondItem="IQc-V4-oFk" secondAttribute="leading" constant="15" id="9Iu-eJ-Vxp"/>
+                                                <constraint firstItem="zCx-K3-EE2" firstAttribute="top" secondItem="IQc-V4-oFk" secondAttribute="top" constant="5" id="GSB-74-yx1"/>
+                                                <constraint firstItem="zCx-K3-EE2" firstAttribute="centerY" secondItem="IQc-V4-oFk" secondAttribute="centerY" id="R27-xO-dYb"/>
+                                                <constraint firstItem="zCx-K3-EE2" firstAttribute="centerX" secondItem="IQc-V4-oFk" secondAttribute="centerX" id="e96-Ll-dJr"/>
+                                                <constraint firstAttribute="trailing" secondItem="zCx-K3-EE2" secondAttribute="trailing" constant="15" id="gm9-S6-Vze"/>
+                                                <constraint firstAttribute="bottom" secondItem="zCx-K3-EE2" secondAttribute="bottom" constant="5" id="l6R-w7-jfV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="jON-G2-yKF" id="8Xq-Dk-KIx"/>
                             <outlet property="delegate" destination="jON-G2-yKF" id="6Dn-EF-VYB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Unit Converter" id="RqZ-fe-Sc2">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4Sx-iG-O4B"/>
+                        <barButtonItem key="rightBarButtonItem" largeContentSizeImage="icon-save" systemItem="save" id="ZCj-wB-mxB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="gallonTextField" destination="5GW-44-2a7" id="BPI-9C-clX"/>
                         <outlet property="litreTextField" destination="TsV-jw-8Pi" id="qfd-8a-tNZ"/>
@@ -1378,6 +1584,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Qjn-n5-Hs9"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7zg-4g-Qph">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.062745098040000002" green="0.67450980390000004" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1397,5 +1604,7 @@
     <resources>
         <image name="icon-constant" width="33" height="33"/>
         <image name="icon-convert" width="33" height="33"/>
+        <image name="icon-save" width="33" height="33"/>
     </resources>
+    <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
