@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConstantViewController: UIViewController {
+class ConstantViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

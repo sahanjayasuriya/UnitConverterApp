@@ -10,15 +10,17 @@ import UIKit
 
 class VolumeCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var gallon: UILabel!
+    @IBOutlet weak var litre: UILabel!
+    @IBOutlet weak var ukPint: UILabel!
+    @IBOutlet weak var fluidOunce: UILabel!
+    @IBOutlet weak var mililitre: UILabel!
+    
+    func setVolume(volume: Volume) {
+        gallon.text = String(volume.gallon)
+        litre.text = String(volume.litre)
+        ukPint.text = String(volume.pint)
+        fluidOunce.text = String(volume.ounce)
+        mililitre.text = String(volume.mililitre)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

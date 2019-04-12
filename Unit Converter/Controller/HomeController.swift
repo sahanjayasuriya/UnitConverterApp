@@ -11,7 +11,10 @@ import UIKit
 
 class HomeController: UIViewController {
 
+    // Defining table view to load menu items
     @IBOutlet weak var tableView: UITableView!
+    
+    // Array to store menu items
     var menuItems: [MenuItem] = []
     
     override func viewDidLoad() {
@@ -23,6 +26,7 @@ class HomeController: UIViewController {
         self.tabBarController?.navigationItem.title = "Unit Converter"
     }
     
+    // Add menu items to the array
     func initializeMenuItems() -> [MenuItem] {
         var menuItems: [MenuItem] = []
         
@@ -47,6 +51,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         return menuItems.count
     }
     
+    // Setting table cell properties
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let menuItem = menuItems[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell") as! MenuCell
@@ -59,6 +64,7 @@ extension HomeController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // Function to move to the selected screen by getting the index of the selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let rowId = menuItems[indexPath.row].id
         performSegue(withIdentifier: rowId, sender: nil)

@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
-class VolumeViewController: UITableViewController {
+class VolumeViewController: UITableViewController, KeyboardDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var gallonTextField: UITextField!
     @IBOutlet weak var litreTextField: UITextField!
     @IBOutlet weak var pintTextField: UITextField!
     @IBOutlet weak var ounceTextField: UITextField!
     @IBOutlet weak var mililitreTextField: UITextField!
+    var activeTextField: UITextField!
     
     let gallonConstant: Double = 0.219969
     let pintConstant: Double = 1.759754
@@ -23,8 +25,37 @@ class VolumeViewController: UITableViewController {
     
     var litreValue: Double = 0
     
+    var volumes = [Volume]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
+        keyboardView.delegate = self
+        gallonTextField.inputView = keyboardView
+        litreTextField.inputView = keyboardView
+        pintTextField.inputView = keyboardView
+        ounceTextField.inputView = keyboardView
+        mililitreTextField.inputView = keyboardView
+        
+        gallonTextField.delegate = self
+        litreTextField.delegate = self
+        pintTextField.delegate = self
+        ounceTextField.delegate = self
+        mililitreTextField.delegate = self
+    }
+    
+    func actTextField() -> UITextField{
+        return activeTextField
+    }
+    
+    func allowNegative() -> Bool{
+        return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
     }
     
     @IBAction func gallonTextViewDidChange(_ sender: UITextField) {
@@ -110,6 +141,57 @@ class VolumeViewController: UITableViewController {
         mililitreTextField.text = nil
     }
     
+    @IBAction func saveConversion(_ sender: UIBarButtonItem) {
+        if(isSpaceFull()) {
+            deleteFirstElement()
+        }
+        
+        let gallon = gallonTextField.text
+        let litre = litreTextField.text
+        let pint = pintTextField.text
+        let ounce = ounceTextField.text
+        let mililitre = mililitreTextField.text
+        
+        if let gallonValue = Double(gallon!),  let litreValue = Double(litre!),  let pintValue = Double(pint!),  let ounceValue = Double(ounce!),  let mililitreValue = Double(mililitre!){
+            
+            let volume = Volume(context: context)
+            volume.gallon = gallonValue
+            volume.litre = litreValue
+            volume.pint = pintValue
+            volume.ounce = ounceValue
+            volume.mililitre = mililitreValue
+            
+            do {
+                try context.save()
+                ProgressHUD.showSuccess("Conversion Saved")
+            } catch {
+                print("Error saving volume \(error)")
+                ProgressHUD.showError("Saving Failed")
+            }
+        } else {
+            ProgressHUD.showError("Amounts Cannot be Empty")
+        }
+    }
+    
+    func isSpaceFull() -> Bool {
+        let request: NSFetchRequest<Volume> = Volume.fetchRequest()
+        do {
+            volumes = try context.fetch(request)
+            return volumes.count >= 5
+        } catch {
+            print("Error fetching volume \(error)")
+            return false
+        }
+    }
+    
+    func deleteFirstElement() {
+        context.delete(volumes[0])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let historyView = segue.destination as? HistoryViewController
+        historyView?.conversionType = ConversionType.VOLUME
+    }
 }
 
 enum VolumeType {

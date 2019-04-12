@@ -10,15 +10,13 @@ import UIKit
 
 class TemperatureCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var celcius: UILabel!
+    @IBOutlet weak var fahrenheit: UILabel!
+    @IBOutlet weak var kelvin: UILabel!
+    
+    func setTemperature(temperature: Temperature) {
+        celcius.text = String(temperature.celcius)
+        fahrenheit.text = String(temperature.fahrenheit)
+        kelvin.text = String(temperature.kelvin)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

@@ -10,14 +10,15 @@
 import UIKit
 import CoreData
 
-class WeightViewController: UITableViewController {
+class WeightViewController: UITableViewController, KeyboardDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var kilogramTextField: UITextField!
     @IBOutlet weak var gramTextField: UITextField!
     @IBOutlet weak var ouncesTextField: UITextField!
     @IBOutlet weak var poundsTextField: UITextField!
     @IBOutlet weak var stonePoundsTextField: UITextField!
-    
+    var activeTextField: UITextField!
     
     let kilogramConstant: Double = 1000
     let ounceConstant: Double = 28.34952
@@ -26,12 +27,37 @@ class WeightViewController: UITableViewController {
     
     var gramValue: Double = 0
     
-    let defaults = UserDefaults.standard
     var weights = [Weight]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
+        keyboardView.delegate = self
+        kilogramTextField.inputView = keyboardView
+        gramTextField.inputView = keyboardView
+        ouncesTextField.inputView = keyboardView
+        poundsTextField.inputView = keyboardView
+        stonePoundsTextField.inputView = keyboardView
+        
+        kilogramTextField.delegate = self
+        gramTextField.delegate = self
+        ouncesTextField.delegate = self
+        poundsTextField.delegate = self
+        stonePoundsTextField.delegate = self
+    }
+    
+    func actTextField() -> UITextField{
+        return activeTextField
+    }
+    
+    func allowNegative() -> Bool{
+        return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
     }
 
     @IBAction func kilogramTextFieldDidChange(_ sender: UITextField) {
@@ -122,6 +148,11 @@ class WeightViewController: UITableViewController {
     }
     
     @IBAction func saveConversion(_ sender: UIBarButtonItem) {
+        
+        if(isSpaceFull()) {
+            deleteFirstElement()
+        }
+        
         let kilogram = kilogramTextField.text
         let gram = gramTextField.text
         let ounce = ouncesTextField.text
@@ -139,11 +170,34 @@ class WeightViewController: UITableViewController {
             
             do {
                 try context.save()
+                ProgressHUD.showSuccess("Conversion Saved")
             } catch {
                 print("Error saving weight \(error)")
+                ProgressHUD.showError("Saving Failed")
             }
+        } else {
+            ProgressHUD.showError("Amounts Cannot be Empty")
         }
-        
+    }
+    
+    func isSpaceFull() -> Bool {
+        let request: NSFetchRequest<Weight> = Weight.fetchRequest()
+        do {
+            weights = try context.fetch(request)
+            return weights.count >= 5
+        } catch {
+            print("Error fetching weight \(error)")
+            return false
+        }
+    }
+    
+    func deleteFirstElement() {
+        context.delete(weights[0])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let historyView = segue.destination as? HistoryViewController
+        historyView?.conversionType = ConversionType.WEIGHT
     }
 }
 

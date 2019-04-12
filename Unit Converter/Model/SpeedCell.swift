@@ -10,15 +10,15 @@ import UIKit
 
 class SpeedCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var mps: UILabel!
+    @IBOutlet weak var kmph: UILabel!
+    @IBOutlet weak var mph: UILabel!
+    @IBOutlet weak var nmph: UILabel!
+    
+    func setSpeed(speed: Speed) {
+        mps.text = String(speed.mps)
+        kmph.text = String(speed.kmph)
+        mph.text = String(speed.mph)
+        nmph.text = String(speed.nmph)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

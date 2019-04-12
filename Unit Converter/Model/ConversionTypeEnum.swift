@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum ConversionType {
+    case WEIGHT
+    case TEMPERATURE
+    case LENGTH
+    case SPEED
+    case VOLUME
+}

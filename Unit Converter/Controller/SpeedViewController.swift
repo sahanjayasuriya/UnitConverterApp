@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
-class SpeedViewController: UITableViewController {
+class SpeedViewController: UITableViewController, KeyboardDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var mpsTextField: UITextField!
     @IBOutlet weak var kphTextField: UITextField!
     @IBOutlet weak var mphTextField: UITextField!
     @IBOutlet weak var nmphTextField: UITextField!
+    var activeTextField: UITextField!
     
     let kphConstant: Double = 3.6
     let mphConstant: Double = 2.2369362921
@@ -21,8 +23,35 @@ class SpeedViewController: UITableViewController {
     
     var mpsValue: Double = 0
     
+    var speeds = [Speed]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
+        keyboardView.delegate = self
+        mpsTextField.inputView = keyboardView
+        kphTextField.inputView = keyboardView
+        mphTextField.inputView = keyboardView
+        nmphTextField.inputView = keyboardView
+        
+        mpsTextField.delegate = self
+        kphTextField.delegate = self
+        mphTextField.delegate = self
+        nmphTextField.delegate = self
+    }
+    
+    func actTextField() -> UITextField{
+        return activeTextField
+    }
+    
+    func allowNegative() -> Bool{
+        return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
     }
 
     @IBAction func mpsTextFieldDidChange(_ sender: UITextField) {
@@ -95,6 +124,56 @@ class SpeedViewController: UITableViewController {
         kphTextField.text = nil
         mphTextField.text = nil
         nmphTextField.text = nil
+    }
+    
+    @IBAction func saveConversion(_ sender: UIBarButtonItem) {
+        if(isSpaceFull()) {
+            deleteFirstElement()
+        }
+        
+        let mps = mpsTextField.text
+        let kmph = kphTextField.text
+        let mph = mpsTextField.text
+        let nmph = nmphTextField.text
+        
+        if let mpsValue = Double(mps!),  let kmphValue = Double(kmph!),  let mphValue = Double(mph!),  let nmphValue = Double(nmph!){
+            
+            let speed = Speed(context: context)
+            speed.mps = mpsValue
+            speed.kmph = kmphValue
+            speed.mph = mphValue
+            speed.nmph = nmphValue
+            
+            do {
+                try context.save()
+                ProgressHUD.showSuccess("Conversion Saved")
+            } catch {
+                print("Error saving speed \(error)")
+                ProgressHUD.showError("Saving Failed")
+            }
+        } else {
+            ProgressHUD.showError("Amounts Cannot be Empty")
+        }
+    }
+    
+    func isSpaceFull() -> Bool {
+        let request: NSFetchRequest<Speed> = Speed.fetchRequest()
+        do {
+            speeds = try context.fetch(request)
+            return speeds.count >= 5
+        } catch {
+            print("Error fetching speed \(error)")
+            return false
+        }
+    }
+    
+    func deleteFirstElement() {
+        context.delete(speeds[0])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let historyView = segue.destination as? HistoryViewController
+        historyView?.conversionType = ConversionType.SPEED
     }
 }
 

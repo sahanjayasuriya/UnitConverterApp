@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class LengthViewController: UITableViewController {
+class LengthViewController: UITableViewController, KeyboardDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var metreTextField: UITextField!
     @IBOutlet weak var mileTextField: UITextField!
@@ -16,6 +17,7 @@ class LengthViewController: UITableViewController {
     @IBOutlet weak var milimeterTextField: UITextField!
     @IBOutlet weak var yardTextField: UITextField!
     @IBOutlet weak var inchTextField: UITextField!
+    var activeTextField: UITextField!
     
     let mileConstant: Double = 1609.344
     let centimetreConstant: Double = 100
@@ -25,8 +27,39 @@ class LengthViewController: UITableViewController {
     
     var metreValue: Double = 0
     
+    var lengths = [Length]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let keyboardView = Keyboard(frame: CGRect(x: 0, y: 0, width: 0, height: 250))
+        keyboardView.delegate = self
+        metreTextField.inputView = keyboardView
+        mileTextField.inputView = keyboardView
+        centimetreTextField.inputView = keyboardView
+        milimeterTextField.inputView = keyboardView
+        yardTextField.inputView = keyboardView
+        inchTextField.inputView = keyboardView
+        
+        metreTextField.delegate = self
+        mileTextField.delegate = self
+        centimetreTextField.delegate = self
+        milimeterTextField.delegate = self
+        yardTextField.delegate = self
+        inchTextField.delegate = self
+    }
+    
+    func actTextField() -> UITextField{
+        return activeTextField
+    }
+    
+    func allowNegative() -> Bool{
+        return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.activeTextField = textField
     }
     
     @IBAction func metreTextViewDidChange(_ sender: UITextField) {
@@ -129,6 +162,60 @@ class LengthViewController: UITableViewController {
         milimeterTextField.text = nil
         yardTextField.text = nil
         inchTextField.text = nil
+    }
+    
+    @IBAction func saveConversion(_ sender: UIBarButtonItem) {
+        if(isSpaceFull()) {
+            deleteFirstElement()
+        }
+        
+        let metre = metreTextField.text
+        let mile = mileTextField.text
+        let centimetre = centimetreTextField.text
+        let milimitre = milimeterTextField.text
+        let yard = yardTextField.text
+        let inch = inchTextField.text
+        
+        if let metreValue = Double(metre!),  let mileValue = Double(mile!),  let centimetreValue = Double(centimetre!),  let milimitreValue = Double(milimitre!),  let yardValue = Double(yard!),  let inchValue = Double(inch!){
+            
+            let length = Length(context: context)
+            length.metre = metreValue
+            length.mile = mileValue
+            length.centimetre = centimetreValue
+            length.milimetre = milimitreValue
+            length.yard = yardValue
+            length.inch = inchValue
+            
+            do {
+                try context.save()
+                ProgressHUD.showSuccess("Conversion Saved")
+            } catch {
+                print("Error saving length \(error)")
+                ProgressHUD.showError("Saving Failed")
+            }
+        } else {
+            ProgressHUD.showError("Amounts Cannot be Empty")
+        }
+    }
+    
+    func isSpaceFull() -> Bool {
+        let request: NSFetchRequest<Length> = Length.fetchRequest()
+        do {
+            lengths = try context.fetch(request)
+            return lengths.count >= 5
+        } catch {
+            print("Error fetching length \(error)")
+            return false
+        }
+    }
+    
+    func deleteFirstElement() {
+        context.delete(lengths[0])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let historyView = segue.destination as? HistoryViewController
+        historyView?.conversionType = ConversionType.LENGTH
     }
 }
 

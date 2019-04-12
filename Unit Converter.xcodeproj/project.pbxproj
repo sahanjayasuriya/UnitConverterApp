@@ -20,6 +20,18 @@
 		260552002247C5AE00C5B506 /* LengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260551FF2247C5AE00C5B506 /* LengthViewController.swift */; };
 		260552022247C5D300C5B506 /* SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260552012247C5D300C5B506 /* SpeedViewController.swift */; };
 		260552042247C5FA00C5B506 /* VolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260552032247C5FA00C5B506 /* VolumeViewController.swift */; };
+		260AF947224DF8D300DA12FD /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 260AF945224DF8D300DA12FD /* ProgressHUD.m */; };
+		260AF948224DF8D300DA12FD /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 260AF946224DF8D300DA12FD /* ProgressHUD.bundle */; };
+		260AF94A224E214A00DA12FD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF949224E214A00DA12FD /* HistoryViewController.swift */; };
+		260AF94C224E257700DA12FD /* ConversionTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF94B224E257700DA12FD /* ConversionTypeEnum.swift */; };
+		260AF950224E77A000DA12FD /* WeightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF94F224E77A000DA12FD /* WeightCell.swift */; };
+		260AF952224E87AE00DA12FD /* TemperatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF951224E87AE00DA12FD /* TemperatureCell.swift */; };
+		260AF954224E893600DA12FD /* LengthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF953224E893600DA12FD /* LengthCell.swift */; };
+		260AF956224E8B8200DA12FD /* SpeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF955224E8B8200DA12FD /* SpeedCell.swift */; };
+		260AF958224E900900DA12FD /* VolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AF957224E900900DA12FD /* VolumeCell.swift */; };
+		261CCAF8224BF30100B1DD13 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 261CCAF6224BF30100B1DD13 /* DataModel.xcdatamodeld */; };
+		26F9E298224F52F900E73EC0 /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26F9E297224F52F900E73EC0 /* Keyboard.xib */; };
+		26F9E29A224F53D800E73EC0 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F9E299224F53D800E73EC0 /* Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +50,20 @@
 		260551FF2247C5AE00C5B506 /* LengthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthViewController.swift; sourceTree = "<group>"; };
 		260552012247C5D300C5B506 /* SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedViewController.swift; sourceTree = "<group>"; };
 		260552032247C5FA00C5B506 /* VolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewController.swift; sourceTree = "<group>"; };
+		260AF943224DF8D100DA12FD /* Unit Converter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Unit Converter-Bridging-Header.h"; sourceTree = "<group>"; };
+		260AF944224DF8D300DA12FD /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		260AF945224DF8D300DA12FD /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		260AF946224DF8D300DA12FD /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		260AF949224E214A00DA12FD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		260AF94B224E257700DA12FD /* ConversionTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTypeEnum.swift; sourceTree = "<group>"; };
+		260AF94F224E77A000DA12FD /* WeightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeightCell.swift; path = ../../WeightCell.swift; sourceTree = "<group>"; };
+		260AF951224E87AE00DA12FD /* TemperatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCell.swift; sourceTree = "<group>"; };
+		260AF953224E893600DA12FD /* LengthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthCell.swift; sourceTree = "<group>"; };
+		260AF955224E8B8200DA12FD /* SpeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedCell.swift; sourceTree = "<group>"; };
+		260AF957224E900900DA12FD /* VolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeCell.swift; sourceTree = "<group>"; };
+		261CCAF7224BF30100B1DD13 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		26F9E297224F52F900E73EC0 /* Keyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
+		26F9E299224F53D800E73EC0 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,22 +96,76 @@
 		260551DE224746BD00C5B506 /* Unit Converter */ = {
 			isa = PBXGroup;
 			children = (
+				26F9E296224F52BD00E73EC0 /* Keyboard */,
+				260AF942224DF7B100DA12FD /* Supporting Files */,
+				260AF941224DF75C00DA12FD /* View */,
+				260812AD224A8FF4008CE0CB /* Controller */,
+				260812AC224A8FD7008CE0CB /* Model */,
 				260551DF224746BD00C5B506 /* AppDelegate.swift */,
-				260551E3224746BD00C5B506 /* Main.storyboard */,
+				260551EB224746BE00C5B506 /* Info.plist */,
+				260551E6224746BE00C5B506 /* Assets.xcassets */,
+			);
+			path = "Unit Converter";
+			sourceTree = "<group>";
+		};
+		260812AC224A8FD7008CE0CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				260AF951224E87AE00DA12FD /* TemperatureCell.swift */,
+				260AF94F224E77A000DA12FD /* WeightCell.swift */,
+				260551F322474DA700C5B506 /* MenuCell.swift */,
+				260551F522474EB600C5B506 /* MenuItem.swift */,
+				261CCAF6224BF30100B1DD13 /* DataModel.xcdatamodeld */,
+				260AF94B224E257700DA12FD /* ConversionTypeEnum.swift */,
+				260AF953224E893600DA12FD /* LengthCell.swift */,
+				260AF957224E900900DA12FD /* VolumeCell.swift */,
+				260AF955224E8B8200DA12FD /* SpeedCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		260812AD224A8FF4008CE0CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				260551FD2247C57000C5B506 /* TemperatureViewController.swift */,
+				260AF949224E214A00DA12FD /* HistoryViewController.swift */,
 				260551FF2247C5AE00C5B506 /* LengthViewController.swift */,
 				260552012247C5D300C5B506 /* SpeedViewController.swift */,
 				260552032247C5FA00C5B506 /* VolumeViewController.swift */,
 				260551F9224790C800C5B506 /* WeightViewController.swift */,
 				260551F12247496000C5B506 /* HomeController.swift */,
 				260551F7224769F700C5B506 /* ConstantViewController.swift */,
-				260551E6224746BE00C5B506 /* Assets.xcassets */,
-				260551E8224746BE00C5B506 /* LaunchScreen.storyboard */,
-				260551EB224746BE00C5B506 /* Info.plist */,
-				260551F322474DA700C5B506 /* MenuCell.swift */,
-				260551F522474EB600C5B506 /* MenuItem.swift */,
 			);
-			path = "Unit Converter";
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		260AF941224DF75C00DA12FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				260551E8224746BE00C5B506 /* LaunchScreen.storyboard */,
+				260551E3224746BD00C5B506 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		260AF942224DF7B100DA12FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				260AF946224DF8D300DA12FD /* ProgressHUD.bundle */,
+				260AF944224DF8D300DA12FD /* ProgressHUD.h */,
+				260AF945224DF8D300DA12FD /* ProgressHUD.m */,
+				260AF943224DF8D100DA12FD /* Unit Converter-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26F9E296224F52BD00E73EC0 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				26F9E297224F52F900E73EC0 /* Keyboard.xib */,
+				26F9E299224F53D800E73EC0 /* Keyboard.swift */,
+			);
+			path = Keyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +200,7 @@
 				TargetAttributes = {
 					260551DB224746BD00C5B506 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -146,7 +227,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				260AF948224DF8D300DA12FD /* ProgressHUD.bundle in Resources */,
 				260551EA224746BE00C5B506 /* LaunchScreen.storyboard in Resources */,
+				26F9E298224F52F900E73EC0 /* Keyboard.xib in Resources */,
 				260551E7224746BE00C5B506 /* Assets.xcassets in Resources */,
 				260551E5224746BD00C5B506 /* Main.storyboard in Resources */,
 			);
@@ -161,13 +244,23 @@
 			files = (
 				260551FA224790C800C5B506 /* WeightViewController.swift in Sources */,
 				260551F22247496000C5B506 /* HomeController.swift in Sources */,
+				26F9E29A224F53D800E73EC0 /* Keyboard.swift in Sources */,
 				260551F622474EB600C5B506 /* MenuItem.swift in Sources */,
+				260AF958224E900900DA12FD /* VolumeCell.swift in Sources */,
 				260551E0224746BD00C5B506 /* AppDelegate.swift in Sources */,
+				260AF94A224E214A00DA12FD /* HistoryViewController.swift in Sources */,
 				260551F8224769F700C5B506 /* ConstantViewController.swift in Sources */,
+				260AF950224E77A000DA12FD /* WeightCell.swift in Sources */,
+				260AF94C224E257700DA12FD /* ConversionTypeEnum.swift in Sources */,
+				261CCAF8224BF30100B1DD13 /* DataModel.xcdatamodeld in Sources */,
+				260AF947224DF8D300DA12FD /* ProgressHUD.m in Sources */,
+				260AF954224E893600DA12FD /* LengthCell.swift in Sources */,
 				260551FE2247C57000C5B506 /* TemperatureViewController.swift in Sources */,
 				260552042247C5FA00C5B506 /* VolumeViewController.swift in Sources */,
 				260552022247C5D300C5B506 /* SpeedViewController.swift in Sources */,
 				260552002247C5AE00C5B506 /* LengthViewController.swift in Sources */,
+				260AF956224E8B8200DA12FD /* SpeedCell.swift in Sources */,
+				260AF952224E87AE00DA12FD /* TemperatureCell.swift in Sources */,
 				260551F422474DA700C5B506 /* MenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Unit Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,6 +416,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sahanjayasuriya.Unit-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Unit Converter/Supporting Files/Unit Converter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -331,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Unit Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,6 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sahanjayasuriya.Unit-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Unit Converter/Supporting Files/Unit Converter-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -366,6 +464,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		261CCAF6224BF30100B1DD13 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				261CCAF7224BF30100B1DD13 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 261CCAF7224BF30100B1DD13 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 260551D4224746BD00C5B506 /* Project object */;
 }
